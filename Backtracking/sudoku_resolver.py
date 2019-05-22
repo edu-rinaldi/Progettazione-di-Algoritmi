@@ -25,7 +25,6 @@ def risolvi_sudoku(schema):
     for y in range(rad_n):
         for x in range(rad_n):
             blocco[(y,x)] = set()
-    c = 0
     for y in range(N):
         righe[y] = set(schema[y])
         for x in range(N):
@@ -34,7 +33,6 @@ def risolvi_sudoku(schema):
             blocco[get_blocco(y, x)].add(schema[y][x])
 
     def n_valido(schema, n, i, j):
-        nonlocal c
         """
             Restituisce True se il numero n, nello schema nella posizione (i,j)
             e' possibile inserirlo
